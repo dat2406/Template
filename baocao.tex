@@ -1,0 +1,192 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} % Sử dụng tiếng Việt
+\usepackage[fontsize=13pt]{scrextend}
+\usepackage[paperheight=29.7cm,paperwidth=21cm,right=2cm,left=3cm,top=2cm,bottom=2.5cm]{geometry} % Căn chỉnh khổ A4
+\usepackage{graphicx} % Thư viện chèn ảnh
+\usepackage{float} % Đặt vị trí chèn ảnh
+\usepackage{tikz} % Thư viện tạo khung bìa
+\usetikzlibrary{calc}
+\usepackage{indentfirst}%thư viện thụt đầu dòng
+\renewcommand{\baselinestretch}{1.2}%giãn dòng 1.2
+\setlength{\parskip}{6pt} 
+\setlength{\parindent}{1cm} 
+\usepackage{titlesec} %thư viện set up các kiểu chữ
+\setcounter{secnumdepth}{4}%4heading
+\titlespacing*{\section}{0pt}{0pt}{30pt} %heading 1
+\titleformat*{\section}{\fontsize{16pt}{0pt}\selectfont \bfseries \centering}
+
+\titlespacing*{\subsection}{0pt}{10pt}{0pt} %heading 2
+\titleformat*{\subsection}{\fontsize{14pt}{0pt}\selectfont \bfseries}
+
+\titlespacing*{\subsubsection}{0pt}{10pt}{0pt} %heading 3
+\titleformat*{\subsubsection}{\fontsize{13pt}{0pt}\selectfont \bfseries \itshape}
+
+\titlespacing*{\paragraph}{0pt}{0pt}{10pt} %heading 4
+\titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
+\usepackage{caption}
+
+%setup hình
+\renewcommand{\figurename}{\fontsize{12pt}{0pt}\selectfont \bfseries Hình}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\captionsetup[figure]{labelsep=space}
+
+%setup bảng
+\renewcommand{\tablename}{\fontsize{12pt}{0pt}\selectfont \bfseries Bảng}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\captionsetup[table]{labelsep=space}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}} %đánh số phương trình
+\renewcommand{\contentsname}{MỤC LỤC}% set lại tên mục lục
+\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}% set lại tên bảng biểu
+\renewcommand{\listfigurename}{DANH MỤC HÌNH}% set lại tên danh mục hình
+\renewcommand{\refname}{TÀI LIỆU THAM KHẢO}% set lại tên tài liệu tham khảo
+
+\usepackage[unicode]{hyperref}
+
+
+\newtheorem{theorem}{Định lý}[section]
+
+%\usepackage{fancyhdr}
+% Tạo đường kẻ dưới trang với độ dày 0.4pt
+%\renewcommand{\footrulewidth}{0.4pt}
+%\pagestyle{fancy}
+%\lhead{dòng trên trái}
+%\rhead{\includegraphics[width=1cm,height=1cm]{logohcmus.png}}
+%\fancyfoot{}
+%\lfoot{dòng dưới trái}
+%\rfoot{dòng dưới phải}
+%\fancyfoot[C]{\thepage} % Đặt số trang ở giữa dưới cùng
+
+\begin{document}
+
+\input{TITLEPAGE}
+\cleardoublepage %xong 1 chương phải dùng dòng này để sang chương mới
+
+%\input{loinoidau}
+%\cleardoublepage
+
+%\input{loicamdoan}
+%\cleardoublepage
+
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents %tạo mục lục tự động
+\thispagestyle{empty}
+\cleardoublepage
+
+%\pagenumbering{roman}
+%\section*{DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}
+%\phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}
+%\cleardoublepage
+
+{\let\oldnumberline\numberline
+\renewcommand{\numberline}{\figurename~\oldnumberline}
+\listoffigures} % Tạo danh mục hình vẽ tự động
+\phantomsection\addcontentsline{toc}{section}{\numberline{} DANH MỤC HÌNH VẼ}
+\cleardoublepage
+
+{\let\oldnumberline\numberline
+\renewcommand{\numberline}{\tablename~\oldnumberline}
+\listoftables}% Tạo danh mục bảng tự động
+\phantomsection\addcontentsline{toc}{section}{\numberline{} DANH MỤC BẢNG BIỂU}
+\cleardoublepage
+
+\input{tomtatdoan}
+\cleardoublepage
+
+\pagenumbering{arabic}%đánh số thứ tự 1, 2, 3
+\section*{CHƯƠNG 1. CHƯƠNG MỞ ĐẦU}
+\phantomsection\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 1. CHƯƠNG MỞ ĐẦU}
+phần mở đầu giới thiệu vấn đề mà đồ án cần giải quyết, mô tả được các phương pháp hiện có để giải quyết vấn đề, trình bày mục đích đồ án song song với việc giới hạn phạm vi vấn đề mà đồ án giải quyết. Phần này giới thiệu tóm tắt cấu trúc đồ án và nội dung tương ứng các phần sẽ được trình bày ở các chương tiếp theo
+
+Nội dung chính của đồ án tốt nghiệp bao gồm:
+\begin{itemize}
+    \item phần mở đầu giới thiệu đề tài.
+    \item một chương giới thiệu cơ sở lí thuyết.
+    \item một hoặc nhiều chương trình bày các vấn đề về tính toán và thiết kế.
+    \item một chương mô tả các thí nghiệm và kết quả thu được.
+\end{itemize}
+
+\newpage
+\section*{CHƯƠNG 2. CƠ SỞ LÝ THUYẾT}
+\phantomsection\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 2. CƠ SỞ LÝ THUYẾT}
+\setcounter{section}{2}
+Mỗi chương sẽ bắt đầu bằng một đoạn giới thiệu các phần chính được trình bày trong chương đó, dài khoảng từ 5 đến 10 dòng và kết thúc bằng một đoạn tóm tắt các kết luận chính của chương. Chú ý phân bố chiều dài chương cho cân đối hợp lí.
+Mỗi chương sẽ bắt đầu bằng đoạn giới thiệu các phần chính được trình bày trong chương đó, dài khoảng từ 5 đến 10 dòng và kết thúc bằng một đoạn tóm tắt các kết luận chính của chương. Chú ý phân bố chiều dài chương cho cân đối hợp lý.\cite{nani2021antioxidant}
+\subsection{Một số lưu ý khi trình bày đồ án}
+sau đây là một vàu lưu ý khi làm đồ án các thằng cc nên nhớ nhé:
+\subsubsection{Nộp đồ án}
+nộp 2 bản cmm đi
+\begin{itemize}
+    \item được \textbf{in hai mặt} nhằm tiết kiệm không gian
+    \item được đóng bìa mềm, bên ngoài là bóng kính
+    \item số trang từ 50-150 trang, không kể phụ lục
+    \item phải có chữ ký sinh viên sau LỜI CAM ĐOAN và của giảng viên hướng dẫn
+\end{itemize}
+\subsubsection{Phụ lục}
+Phụ lục (nếu có) chứa các thông tin có liên quan đồ án nhưng để trong phần chính sẽ gây rườm rà. thông thường chi tiết được để trong phần phụ lục là: kết quả thô (chưa qua xử lý), mã nguồn phần mềm, thông số kĩ thuật chi tiết của linh kiện, hình ảnh minh họa thêm,...
+
+\subsubsection{Tài liệu tham khảo}
+\paragraph{Cách liệt kê} \mbox{}
+
+áp dụng cách liệt kê theo quy định của IEEE. Theo đó, tài liệu tham khảo được đanh số trong ngoặc vuông. Thứ tự liệt ê là thứ tự xuất hiện của tài liệu tham khảo được trích dẫn trong đồ án. Tài liệu tham khảo bắt buộc phải được trích dẫn trong phần nội dung đồ án. Tài liệu tham khảo phải có nguồn gốc rõ ràng và phải từ nguồn đáng tin cậy, hạn chế trích dẫn tài liệu tham khảo từ các website, từ wikipedia.
+\paragraph{Các loại tài liệu tham khảo}\mbox{}
+các nguồn tài liệu chính là sách, bài báo trong các tạp chí, bài báo trong các hội nghị khoa học và các tài liệu tham khảo khác trên internet.
+\subsubsection{Đánh số phương trình}
+Phương trình được đánh số theo số của chương như hình vẽ và bảng biểu.
+\subsubsection{đánh số định nghĩa, định lý, hệ quả}
+các định nghĩa, định lý, hệ quả sẽ được đánh số theo số của chương sử dụng chung một chỉ số. ví dụ Định lý 3.1 định nghĩa 3.2, hệ quả 3.3
+
+
+\newpage
+\section*{CHƯƠNG 3. THUẬT TOÁN}
+\phantomsection\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 3. THUẬT TOÁN}
+\setcounter{section}{3}
+giới thiệu cc j giới thiệu đi
+\subsection{Cách chèn ảnh }
+\setcounter{figure}{0}%set lại số
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{logohcmus.png}
+    \caption{\bfseries\fontsize{12pt}{0pt}\selectfontảnh này là cái logo trường tao}
+    \label{hinh3.1}
+\end{figure}
+Hình \ref{hinh3.1} là ví dụ về cách chèn ảnh lưu ý chú thích của hình vẽ được đặt ngay dưới hình vẽ tất cả hình vẽ phải được đề cập trong phần nội dung phân tích và bình luận nhé các thằng ông nậu
+\subsection{tạo bảng}
+\begin{table}[H]
+    \centering
+     \caption{kết qua}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+      1  &  1& 1 &1 \\\hline
+        &  &  &\\\hline
+        &  &  &\\\hline
+      
+    \end{tabular}
+   
+    \label{vailonluon}
+\end{table}
+bảng \ref{vailonluon} là ví dụ về cách tạo bảng, Tất cả các bảng biểu phải được đề cập trong phần nội dung và phải được phân tích, bình luận giống như bố m đang làm nhé
+
+\subsection{Cách viết phương trình}
+\begin{equation} \label{pt31}
+    F(x) = \int^a_b \frac{1}{3}x^3
+\end{equation}
+phương trình
+
+\subsection{Cách viết định nghĩa, định lỹ, hệ quả, bộ đề,...}
+\begin{theorem}
+    Một cc là một cc là một cc vcvcvc
+\end{theorem}
+\cleardoublepage
+\input{ketluan}
+\cleardoublepage
+\phantomsection\addcontentsline{toc}{section}{\numberline{}TÀI LIỆU THAM KHẢO}
+\bibliographystyle{IEEEtran}
+\bibliography{tailieuthamkhao}
+trích dẫn dùng \cite{nani2021antioxidant}
+
+\cleardoublepage
+%\input{phuluc}
+%\pagestyle{fancy} % kiểu trang như trên gất chi là fancy
+\end{document}
